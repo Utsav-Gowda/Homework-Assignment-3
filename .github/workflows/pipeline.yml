@@ -1,5 +1,11 @@
 name: Portfolio Pipeline
 
+on:
+  push:
+    branches: ["main"]
+  pull_request:
+    branches: ["main"]
+
 env:
   FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
 
@@ -46,4 +52,3 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v5
-
